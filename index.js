@@ -3,7 +3,7 @@ const express=require('express')
 const mongoo=require('mongoose')
 const userRoute=require('./routes/userRoute')
 const accountRoute=require('./routes/accountRoute')
-const uploadRoute=require('./upload/upload')
+const uploadRoute=require('./routes/uploadRoute')
 
 const app = express()
 app.use(express.json())
@@ -27,7 +27,7 @@ async function main() {
 
 app.use(userRoute)
 app.use(accountRoute)
-
+app.use(uploadRoute)
 
 
 app.listen(8000,()=>{
