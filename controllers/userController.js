@@ -68,7 +68,7 @@ function authMiddleware(req, res, next) {
         return res.status(401).json({ error: "No token provided" });
     }
 
-    // header structure must be in "Authorization: mustafa Token"
+    // header structure must be in "Authorization: Bearer Token"
     const token = authHeader.split(" ")[1]
     if (!token) {
         return res.status(401).json({ error: "Token missing" });
